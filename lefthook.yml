@@ -1,0 +1,13 @@
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm exec commitlint --edit {1}
+
+pre-commit:
+  commands:
+    figuras:
+      glob: "capitulos/*/figuras/*.tex"
+      run: scripts/figuras.sh {staged_files} && git add {staged_files} $(for f in {staged_files}; do echo "${f%.tex}.svg ${f%.tex}-oscuro.svg ${f%.tex}.pdf"; done)
+    figuras-compartidas:
+      glob: "{tikz-estilos.tex,macros.tex}"
+      run: scripts/figuras.sh && git add 'capitulos/*/figuras/*.svg' 'capitulos/*/figuras/*.pdf'

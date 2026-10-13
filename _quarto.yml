@@ -1,0 +1,45 @@
+project:
+  type: book
+  output-dir: _book
+
+lang: es
+
+book:
+  title: "Cálculo avanzado"
+  author: "Rubén Maguregui"
+  date: last-modified
+  date-format: long
+  license: "CC BY-SA"
+  downloads: [pdf]
+  search: true
+  chapters:
+    - index.qmd
+    - capitulos/01-limites/index.qmd
+    - referencias.qmd
+
+bibliography: referencias.bib
+csl: iso690-numeric-es.csl
+
+filters:
+  - filtros/macros.lua
+  - quarto
+  - filtros/figuras-oscuras.lua
+
+format:
+  html:
+    theme:
+      light: [cosmo, estilos/custom.scss]
+      dark: [darkly, estilos/custom.scss]
+    respect-user-color-scheme: true
+    html-math-method: mathjax
+    default-image-extension: svg
+    number-depth: 2
+  pdf:
+    documentclass: scrreprt
+    papersize: a4
+    pdf-engine: lualatex
+    include-in-header:
+      - text: \usepackage{newcomputermodern}
+      - file: macros.tex
+    default-image-extension: pdf
+    number-depth: 2

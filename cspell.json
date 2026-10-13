@@ -1,0 +1,92 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "es,en",
+  "enableFiletypes": [
+    "quarto",
+    "latex"
+  ],
+  "ignorePaths": [
+    "_book/**",
+    ".quarto/**",
+    "node_modules/**",
+    "package-lock.json",
+    "*.csl",
+    "*.svg",
+    "*.pdf",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "patterns": [
+    {
+      "name": "math-display",
+      "pattern": "/\\$\\$[\\s\\S]*?\\$\\$/g"
+    },
+    {
+      "name": "math-inline",
+      "pattern": "/\\$[^$\\n]+\\$/g"
+    },
+    {
+      "name": "quarto-attributes",
+      "pattern": "/\\{[#.][^}\\n]*\\}/g"
+    },
+    {
+      "name": "quarto-crossref",
+      "pattern": "/@(?:sec|fig|tbl|eq|def|thm|lem|cor|prp|exm|exr)-[\\w-]+/g"
+    },
+    {
+      "name": "citation-key",
+      "pattern": "/@[A-Za-z][\\w:-]*\\d{4}\\w*/g"
+    },
+    {
+      "name": "latex-command",
+      "pattern": "/\\\\[A-Za-z]+/g"
+    }
+  ],
+  "ignoreRegExpList": [
+    "math-display",
+    "math-inline",
+    "quarto-attributes",
+    "quarto-crossref",
+    "citation-key",
+    "latex-command"
+  ],
+  "words": [
+    "calculo",
+    "capitulos",
+    "CODIGO",
+    "colour",
+    "colours",
+    "commitlint",
+    "crossref",
+    "darkly",
+    "desactualizadas",
+    "descargable",
+    "documentclass",
+    "isbn",
+    "JOBNAME",
+    "lefthook",
+    "limites",
+    "lualatex",
+    "Maguregui",
+    "mainfont",
+    "mathfont",
+    "mathjax",
+    "newcomputermodern",
+    "nonstopmode",
+    "pandoc",
+    "Pandoc",
+    "papersize",
+    "pdftocairo",
+    "Poppler",
+    "raiz",
+    "recompila",
+    "rudin",
+    "scrreprt",
+    "spivak",
+    "Spivak",
+    "TEXINPUTS",
+    "tikz",
+    "TikZ"
+  ]
+}

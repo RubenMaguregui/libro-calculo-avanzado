@@ -1,0 +1,44 @@
+% Shared preamble and TikZ styles for every figure in capitulos/*/figuras/.
+% Each figure starts with:
+%   \documentclass[tikz]{standalone}
+%   \input{tikz-estilos}
+% scripts/figuras.sh puts the repository root on TEXINPUTS and compiles each
+% figure twice: as is (PDF book and light HTML theme) and with \modooscuro
+% defined (dark HTML theme).
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{newcomputermodern}
+\input{macros}
+
+\usetikzlibrary{arrows.meta, positioning, calc, shapes.geometric}
+
+% Semantic palette. Figures must use only these colour names (never raw
+% colours such as blue or black) so both variants stay legible.
+%   fig-trazo   lines and text
+%   fig-fondo   page background (the SVG itself is transparent)
+%   fig-acento  primary highlight; fig-acento2 secondary highlight
+%   fig-relleno / fig-relleno2  soft fills derived from the highlights
+\ifdefined\modooscuro
+  % Matches the darkly theme (background #222222).
+  \definecolor{fig-trazo}{HTML}{DEE2E6}
+  \definecolor{fig-fondo}{HTML}{222222}
+  \definecolor{fig-acento}{HTML}{6EA8FE}
+  \definecolor{fig-acento2}{HTML}{FFA94D}
+\else
+  % Matches the cosmo theme and the printed book.
+  \definecolor{fig-trazo}{HTML}{000000}
+  \definecolor{fig-fondo}{HTML}{FFFFFF}
+  \definecolor{fig-acento}{HTML}{2780E3}
+  \definecolor{fig-acento2}{HTML}{E8590C}
+\fi
+\colorlet{fig-relleno}{fig-acento!15!fig-fondo}
+\colorlet{fig-relleno2}{fig-acento2!15!fig-fondo}
+
+\tikzset{
+  every picture/.append style={color=fig-trazo},
+  >={Stealth[length=2.2mm]},
+  bloque/.style={draw, rectangle, rounded corners=2pt, minimum height=9mm,
+    minimum width=20mm, align=center},
+  flecha/.style={->, thick},
+}

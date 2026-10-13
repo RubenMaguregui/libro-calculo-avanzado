@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"ltex.language": "es",
+		"ltex.enabled": ["markdown", "quarto", "latex"],
+		"ltex.additionalRules.motherTongue": "es",
+		"files.exclude": {
+			"_book": true,
+			".quarto": true,
+			"node_modules": true
+		},
+		"[quarto]": {
+			"editor.wordWrap": "on"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"quarto.quarto",
+			"ltex-plus.vscode-ltex-plus",
+			"streetsidesoftware.code-spell-checker",
+			"streetsidesoftware.code-spell-checker-spanish",
+			"james-yu.latex-workshop"
+		]
+	}
+}

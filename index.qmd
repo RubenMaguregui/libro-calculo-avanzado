@@ -1,0 +1,7 @@
+# Prefacio {.unnumbered}
+
+Este libro es una introducción al cálculo avanzado.
+
+::: {.content-visible when-format="html"}
+Esta obra se distribuye bajo la licencia [Creative Commons Atribución-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/deed.es).
+:::

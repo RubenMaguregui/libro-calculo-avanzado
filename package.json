@@ -1,0 +1,21 @@
+{
+  "name": "calculo-avanzado",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Cálculo avanzado: libro en Quarto",
+  "author": "Rubén Maguregui",
+  "license": "CC-BY-SA-4.0",
+  "scripts": {
+    "figuras": "scripts/figuras.sh",
+    "preview": "quarto preview",
+    "render": "scripts/figuras.sh && quarto render",
+    "release": "commit-and-tag-version"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "commit-and-tag-version": "^13.2.1",
+    "lefthook": "^2.1.14"
+  },
+  "packageManager": "pnpm@12.6.0"
+}

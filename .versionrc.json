@@ -1,0 +1,13 @@
+{
+  "header": "# Historial de cambios\n\n",
+  "types": [
+    {"type": "feat", "section": "Nuevas características"},
+    {"type": "fix", "section": "Corrección de errores"},
+    {"type": "chore", "section": "Tareas de mantenimiento", "hidden": false},
+    {"type": "docs", "section": "Documentación", "hidden": false},
+    {"type": "style", "section": "Estilos", "hidden": true},
+    {"type": "refactor", "section": "Refactorización", "hidden": false},
+    {"type": "perf", "section": "Mejoras de rendimiento", "hidden": false},
+    {"type": "test", "section": "Pruebas", "hidden": true}
+  ]
+}

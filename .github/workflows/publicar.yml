@@ -1,0 +1,51 @@
+name: Publicar libro
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.10.18
+          tinytex: true
+
+      # The TikZ figures are committed already compiled, so CI only needs
+      # the packages used by the PDF book itself.
+      - name: Instalar fuentes New Computer Modern
+        run: |
+          tlmgr="$HOME/.TinyTeX/bin/x86_64-linux/tlmgr"
+          "$tlmgr" update --self
+          "$tlmgr" install newcomputermodern
+
+      - name: Renderizar
+        run: quarto render
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _book
+
+  desplegar:
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v4

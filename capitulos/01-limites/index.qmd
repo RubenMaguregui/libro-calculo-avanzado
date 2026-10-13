@@ -1,0 +1,47 @@
+# Límites y continuidad {#sec-limites}
+
+## Introducción
+
+Este capítulo de ejemplo comprueba que todas las piezas del libro funcionan: definiciones, teoremas, demostraciones, referencias cruzadas, citas, macros de notación y figuras TikZ.
+
+## Límite de una función
+
+::: {#def-limite}
+## Límite
+
+Sean $A \subseteq \R$, $f \colon A \to \R$ y $a$ un punto de acumulación de $A$. Se dice que $f$ tiene *límite* $L$ en $a$ si
+$$
+\forall \varepsilon > 0 \; \exists \delta > 0 : \; x \in A, \; 0 < \abs{x - a} < \delta \implies \abs{f(x) - L} < \varepsilon,
+$$ {#eq-limite}
+y se escribe $\lim_{x \to a} f(x) = L$.
+:::
+
+La @fig-limite ilustra la @eq-limite: dada una banda de anchura $2\varepsilon$ alrededor de $L$, existe un entorno de $a$ cuya imagen queda dentro de ella [@rudin1976, cap. 4].
+
+![Definición de límite.](figuras/limite){#fig-limite}
+
+## Continuidad
+
+::: {#def-continuidad}
+## Continuidad
+
+Una función $f \colon A \to \R$ es *continua* en $a \in A$ si $\lim_{x \to a} f(x) = f(a)$, o si $a$ es un punto aislado de $A$.
+:::
+
+::: {#thm-valor-intermedio}
+## Teorema de Bolzano
+
+Si $f \colon [a, b] \to \R$ es continua y $f(a) < 0 < f(b)$, existe $c \in (a, b)$ tal que $f(c) = 0$.
+:::
+
+::: {.proof}
+Sea $c = \sup \{x \in [a, b] : f(x) < 0\}$. Si fuera $f(c) < 0$, por la @def-continuidad habría puntos a la derecha de $c$ con $f < 0$; si fuera $f(c) > 0$, habría un entorno a la izquierda de $c$ con $f > 0$. Ambos casos contradicen la definición de $c$, luego $f(c) = 0$.
+:::
+
+::: {#exm-polinomio}
+## Raíz de un polinomio
+
+El polinomio $p(x) = x^3 - 2$ cumple $p(1) < 0 < p(2)$, así que, por el @thm-valor-intermedio, tiene una raíz en $(1, 2)$.
+:::
+
+En varias variables, la derivada $\deriv{f}{x}$ se generaliza a las derivadas parciales $\pderiv{f}{x_i}$ y al gradiente $\grad f$, cuya norma $\norm{\grad f}$ se estudiará más adelante [@spivak1965].

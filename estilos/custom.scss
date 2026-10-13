@@ -1,0 +1,15 @@
+/*-- scss:defaults --*/
+$font-size-root: 17px;
+
+/*-- scss:rules --*/
+// Theorem-like blocks: a left rule keeps them visible without boxing the text.
+.theorem,
+.proof {
+  margin: 1.25rem 0;
+  padding-left: 0.9rem;
+  border-left: 3px solid rgba($primary, 0.55);
+}
+
+.proof {
+  border-left-style: dotted;
+}
